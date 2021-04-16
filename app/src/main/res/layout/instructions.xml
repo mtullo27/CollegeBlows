@@ -7,36 +7,33 @@
     android:orientation="vertical"
 
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".Instructions">
 
     <TextView
         android:id = "@+id/text_view"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="10dp"
         android:layout_width = "match_parent"
         android:layout_height="wrap_content"
         android:textSize="50dp"
         android:gravity="center"
-        android:hint = "COLLEGE BLOWS" />
+        android:text = "INSTRUCTIONS" />
 
+    <TextView
+        android:layout_marginTop = "10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "The instructions for the game will go here or something"/>
     <Button
-        android:id="@+id/button_play"
+        android:id="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
-        android:text="PLAY"
-        android:onClick="playClick"
+        android:text="BACK"
+        android:onClick="backClick"
+
 
         />
-    <Button
-        android:id="@+id/button_instructions"
-        android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="INSTRUCTIONS"
-        android:onClick="instructionClick"/>
-
 
 
 </LinearLayout>
