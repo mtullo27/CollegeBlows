@@ -21,7 +21,7 @@ public class CharacterCreation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_character_creation);
+        setContentView(R.layout.character_creation);
     }
 
     public void onPickPhoto(View v){
