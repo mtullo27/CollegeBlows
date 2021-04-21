@@ -12,7 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeBlows">
-        <activity android:name=".CharacterCreation"></activity>
+        <activity
+            android:name=".Instruction2"
+            android:label="@string/title_activity_instruction2"
+            android:theme="@style/Theme.CollegeBlows.NoActionBar"></activity>
+        <activity
+            android:name=".Play"
+            android:label="@string/title_activity_test"
+            android:theme="@style/Theme.CollegeBlows.NoActionBar" />
+        <activity android:name=".CharacterCreation" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
