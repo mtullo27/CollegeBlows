@@ -1,31 +1,31 @@
 package com.example.collegeblows;
 
-import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class Instruction2 extends AppCompatActivity {
 
+    Button b_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("OnCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instruction2);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+        b_back = findViewById(R.id.button_back);
+    }
+
+
+    public void backClick(View view) {
+        System.out.println("Hello");
+        Intent intent =  new Intent(this, MainActivity.class);
+        System.out.println("After Intent");
+        startActivity(intent);
+        System.out.println("Last");
     }
 }
