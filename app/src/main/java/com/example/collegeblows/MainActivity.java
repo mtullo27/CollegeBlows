@@ -9,23 +9,27 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    Button b_play, b_instructions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("OnCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        configureInstructionButton();
-    }
-    public void configureInstructionButton(){
-        Button b_instructions = (Button) findViewById(R.id.button_instructions);
-        b_instructions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Instructions.class));
-            }
-        });
+        b_play = findViewById(R.id.button_play);
+        b_instructions = findViewById(R.id.button_instructions);
     }
 
+    public void playClick(View view) {
+        System.out.println("Hello");
+        Intent intent =  new Intent(this, Play.class);
+        System.out.println("After Intent");
+        startActivity(intent);
+        System.out.println("Last");
+    }
+
+    public void instructionClick(View view) {
+        Intent intent =  new Intent(this, Instruction2.class);
+        startActivity(intent);
+    }
 }
