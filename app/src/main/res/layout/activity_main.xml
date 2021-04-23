@@ -18,16 +18,7 @@
         android:gravity="center"
         android:hint = "COLLEGE BLOWS" />
 
-    <Button
-        android:id="@+id/button_play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="200dp"
-        android:text="PLAY"
-        android:onClick="playClick"
 
-        />
     <Button
         android:id="@+id/button_instructions"
         android:layout_marginTop="50dp"
@@ -35,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="INSTRUCTIONS"
-        android:onClick="instructionClick"/>
+        />
 
 
 
