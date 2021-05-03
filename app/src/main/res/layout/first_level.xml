@@ -7,28 +7,34 @@
     android:orientation="vertical"
 
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".FirstLevel">
+
 
     <TextView
-        android:id = "@+id/text_view"
-        android:layout_marginTop="150dp"
-        android:layout_width = "match_parent"
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50dp"
+        android:layout_marginTop="150dp"
         android:gravity="center"
-        android:hint = "COLLEGE BLOWS" />
-
+        android:hint="You must choose something "
+        android:textSize="25dp" />
 
     <Button
-        android:id="@+id/button_instructions"
-        android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
+        android:id="@+id/button_option1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="INSTRUCTIONS"
-        android:onClick="instructionClick"
-        />
-
+        android:layout_marginTop="5dp"
+        android:onClick="option1Click"
+        android:text="Option1" />
+    <Button
+        android:id="@+id/button_option2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:onClick="option2Click"
+        android:text="Option2" />
 
 
 </LinearLayout>
