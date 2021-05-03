@@ -12,7 +12,7 @@ public class FirstLevel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("OnCreate");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.firstlevel_main);
+        setContentView(R.layout.first_level);
 
     }
 
