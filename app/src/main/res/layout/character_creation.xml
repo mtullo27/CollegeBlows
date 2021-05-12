@@ -8,9 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
         android:padding="16dp"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        android:id="@+id/character_creation">
+
 
         <ImageView
         android:id="@+id/Player"
@@ -26,8 +27,14 @@
         android:text="Pick a Photo"
         android:onClick="onPickPhoto"/>
         <TextView
+            android:id="@+id/stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stat Points Remaining: 10"
+            android:textSize="22dp"/>
+        <TextView
             android:id="@+id/charis"
-            android:text="charisma:"
+            android:text="Charisma: 5"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -35,11 +42,12 @@
             android:id="@+id/charBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:tag="Charisma: "
             android:max="10"
             android:progress="5"/>
         <TextView
             android:id="@+id/intel"
-            android:text="Intellegence:"
+            android:text="Intellegence: 5"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -47,11 +55,12 @@
             android:id="@+id/intBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:tag="Intelligence: "
             android:max="10"
             android:progress="5"/>
         <TextView
             android:id="@+id/dex"
-            android:text="Dexterity:"
+            android:text="Dexterity: 5"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -59,11 +68,12 @@
             android:id="@+id/dexBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:tag="Dexterity: "
             android:max="10"
             android:progress="5"/>
         <TextView
             android:id="@+id/stren"
-            android:text="Strength:"
+            android:text="Strength: 5"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -71,11 +81,12 @@
             android:id="@+id/strenBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:tag="Strength: "
             android:max="10"
             android:progress="5"/>
         <TextView
             android:id="@+id/consti"
-            android:text="Constitution:"
+            android:text="Constitution: 5"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -83,6 +94,7 @@
             android:id="@+id/constiBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:tag="Constitution: "
             android:max="10"
             android:progress="5"/>
     </LinearLayout>
