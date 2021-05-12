@@ -29,6 +29,15 @@
         android:onClick="instructionClick"
         />
 
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Character Creation"
+        android:onClick="charClick"
+        />
+
 
 
 </LinearLayout>
