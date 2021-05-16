@@ -26,12 +26,16 @@ public class FirstLevel extends AppCompatActivity {
 
     public void option1Click(View view) {
         if(step==0) {
-            b_option1.setText("option1 has changed");
+            text.setText("Text has changed");
+            b_option1.setText("Oh no, you've been removed from your housing");
             step++;
         }
     }
     public void option2Click(View view) {
         if(step==0) {
+            step++;
+            text.setText("Text has changed");
+            b_option2.setText("option2 has changed");
             step++;
         }
     }
