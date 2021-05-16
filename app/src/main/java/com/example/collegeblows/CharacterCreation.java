@@ -11,24 +11,87 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.io.IOException;
 
 public class CharacterCreation extends AppCompatActivity {
 
     public final static int PICK_PHOTO_CODE = 1046;
+    TextView progressCLabel;
+    TextView statTotal;
+    int statRemaining = 10;
+    int currentProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character_creation);
+
+        SeekBar charBar = findViewById(R.id.charBar);
+        SeekBar intBar = findViewById(R.id.intBar);
+        SeekBar dexBar = findViewById(R.id.dexBar);
+        SeekBar strBar = findViewById(R.id.strenBar);
+        SeekBar consBar = findViewById(R.id.constiBar);
+
+        statTotal = findViewById(R.id.stats);
+
+        charBar.setOnSeekBarChangeListener(seekBarChangeListener);
+        intBar.setOnSeekBarChangeListener(seekBarChangeListener);
+        dexBar.setOnSeekBarChangeListener(seekBarChangeListener);
+        strBar.setOnSeekBarChangeListener(seekBarChangeListener);
+        consBar.setOnSeekBarChangeListener(seekBarChangeListener);
     }
 
-    public void onPickPhoto(View v){
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        if(intent.resolveActivity(getPackageManager()) != null)
-            startActivityForResult(intent, PICK_PHOTO_CODE);
-    }
+    SeekBar.OnSeekBarChangeListener seekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+            currentProgress = seekBar.getProgress();
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            // called after the user finishes moving the SeekBar
+            int progress = seekBar.getProgress();
+            String tag = seekBar.getTag().toString();
+            switch (tag){
+                case("Charisma: "):
+                    progressCLabel = findViewById(R.id.charis);
+                    break;
+                case("Intelligence: "):
+                    progressCLabel = findViewById(R.id.intel);
+                    break;
+                case("Dexterity: "):
+                    progressCLabel = findViewById(R.id.dex);
+                    break;
+                case("Strength: "):
+                    progressCLabel = findViewById(R.id.stren);
+                    break;
+                default:
+                    progressCLabel = findViewById(R.id.consti);
+
+            }
+            if (statRemaining - (progress - currentProgress) < 0){
+                seekBar.setProgress(currentProgress + statRemaining);
+                statRemaining = 0;
+                progressCLabel.setText(tag + (currentProgress + statRemaining));
+                Snackbar.make(findViewById(R.id.character_creation), "Out of stat points", Snackbar.LENGTH_SHORT);
+            }
+            else {
+                progressCLabel.setText(tag + progress);
+                statRemaining = statRemaining - (progress - currentProgress);
+                statTotal.setText("Stat Points Remaining: " + (statRemaining));
+            }
+        }
+    };
 
     public Bitmap loadFromUri(Uri photoUri){
         Bitmap image = null;
@@ -55,4 +118,11 @@ public class CharacterCreation extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+
+    public void onPickPhoto(View v){
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        if(intent.resolveActivity(getPackageManager()) != null)
+            startActivityForResult(intent, PICK_PHOTO_CODE);
+    }
+
 }

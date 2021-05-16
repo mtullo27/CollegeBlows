@@ -28,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Last");
     }
     public void instructionClick(View view) {
-        System.out.println("Hello");
         Intent intent =  new Intent(this, Instruction2.class);
-        System.out.println("After Intent");
         startActivity(intent);
-        System.out.println("Last");
+    }
+
+    public void charClick(View v){
+        Intent intent = new Intent(this, CharacterCreation.class);
+        startActivity(intent);
     }
 }
