@@ -8,15 +8,30 @@
 
     android:padding="16dp"
     tools:context=".FirstLevel">
+    <TextView
+        android:id="@+id/hp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+
+        android:inputType="number"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/game" />
 
 
     <TextView
         android:id="@+id/text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:gravity="center"
-        android:hint="Make a choice to start the game"
+        android:text="Demo of game"
         android:textSize="25dp" />
 
     <Button
@@ -35,6 +50,8 @@
         android:layout_marginTop="0dp"
         android:onClick="option2Click"
         android:text="Choice 2" />
+
+
 
 
 </LinearLayout>

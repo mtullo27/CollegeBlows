@@ -21,11 +21,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playClick(View view) {
-        System.out.println("Hello");
-        Intent intent =  new Intent(this, FirstLevel.class);
-        System.out.println("After Intent");
+        Intent intent =  new Intent(this, Level1.class);
         startActivity(intent);
-        System.out.println("Last");
+
     }
     public void instructionClick(View view) {
         Intent intent =  new Intent(this, Instruction2.class);
