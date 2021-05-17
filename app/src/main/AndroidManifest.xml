@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeBlows">
+        <activity android:name=".Level1"></activity>
         <activity
             android:name=".Instruction2"
             android:label="@string/title_activity_instruction2"
-            android:theme="@style/Theme.CollegeBlows.NoActionBar"></activity>
+            android:theme="@style/Theme.CollegeBlows.NoActionBar" />
         <activity
             android:name=".Play"
             android:label="@string/title_activity_test"
