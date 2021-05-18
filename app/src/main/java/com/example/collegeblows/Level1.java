@@ -59,7 +59,7 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==3) {
-            if(charisma_check==true) {
+            if(true) {//char check
                 text.setText("Your roommate happily says he'll do them, time to go to class");
                 b_option1.setText("Walk there");
                 b_option2.setText("Take the bus");
@@ -79,7 +79,7 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==5) {
-            if(int_check==true) {
+            if(true) {//int check
                 text.setText("The test was easy for you so you leave");
                 b_option1.setText("Walk away happy");
                 b_option2.setText("Walk away unbothered");
@@ -117,7 +117,7 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==10) {
-            if(const_check==true) {
+            if(true) {//const check
                 text.setText("You quickly dodge the chair and its time to strike back");
                 b_option1.setText("Throw your own chair");
                 b_option2.setText("Throw a punch at him");
@@ -178,7 +178,7 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==3) {
-            if(strength_check==true) {
+            if(true) {//str check
                 text.setText("Your roommate shivering, says he'll do them, time to go to class");
                 b_option1.setText("Walk there");
                 b_option2.setText("Take the bus");
@@ -198,7 +198,7 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==5) {
-            if(dex_check==true) {
+            if(true) {//dex check
                 text.setText("The kid next to you left his paper wide open and the test was easy");
                 b_option1.setText("Walk away happy");
                 b_option2.setText("Walk away unbothered");
@@ -236,7 +236,7 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==10) {
-            if(const_check==true) {
+            if(true) {//const check
                 text.setText("The chair shatters on your arms and its time to strike back");
                 b_option1.setText("Throw your own chair");
                 b_option2.setText("Throw a punch at him");
