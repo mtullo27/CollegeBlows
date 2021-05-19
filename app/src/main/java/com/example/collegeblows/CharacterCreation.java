@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.IOException;
+import java.io.Serializable;
 
 public class CharacterCreation extends AppCompatActivity {
 
@@ -24,6 +25,11 @@ public class CharacterCreation extends AppCompatActivity {
     TextView progressCLabel;
     TextView statTotal;
     int statRemaining = 10;
+    SeekBar charBar;
+    SeekBar intBar;
+    SeekBar dexBar;
+    SeekBar strBar;
+    SeekBar consBar;
     int currentProgress;
 
     @Override
@@ -31,13 +37,13 @@ public class CharacterCreation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character_creation);
 
-        SeekBar charBar = findViewById(R.id.charBar);
-        SeekBar intBar = findViewById(R.id.intBar);
-        SeekBar dexBar = findViewById(R.id.dexBar);
-        SeekBar strBar = findViewById(R.id.strenBar);
-        SeekBar consBar = findViewById(R.id.constiBar);
-
         statTotal = findViewById(R.id.stats);
+
+        charBar = findViewById(R.id.charBar);
+        intBar = findViewById(R.id.intBar);
+        dexBar = findViewById(R.id.dexBar);
+        strBar = findViewById(R.id.strenBar);
+        consBar = findViewById(R.id.constiBar);
 
         charBar.setOnSeekBarChangeListener(seekBarChangeListener);
         intBar.setOnSeekBarChangeListener(seekBarChangeListener);
@@ -106,6 +112,17 @@ public class CharacterCreation extends AppCompatActivity {
             e.printStackTrace();
         }
         return image;
+    }
+    public void onClickCon(View v){
+        character c = new character(charBar.getProgress(), intBar.getProgress(), dexBar.getProgress(), strBar.getProgress(), consBar.getProgress());
+        Intent intent = new Intent(this, Level1.class);
+        intent.putExtra("Character", c);
+        startActivity(intent);
+    }
+
+    public void backButton(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override

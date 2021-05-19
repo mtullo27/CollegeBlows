@@ -14,18 +14,18 @@
 
 
         <ImageView
-        android:id="@+id/Player"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+            android:id="@+id/Player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <Button
-        android:id="@+id/upload"
-        android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Pick a Photo"
-        android:onClick="onPickPhoto"/>
+            android:id="@+id/upload"
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Pick a Photo"
+            android:onClick="onPickPhoto"/>
         <TextView
             android:id="@+id/stats"
             android:layout_width="wrap_content"
@@ -102,6 +102,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/confirm_button"
             android:layout_gravity="center"
-            android:text="Confirm"/>
+            android:text="Confirm"
+            android:onClick="onClickCon"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:layout_gravity="center"
+            android:text="Back"
+            android:onClick="backButton"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

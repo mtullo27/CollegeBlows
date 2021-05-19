@@ -1,6 +1,8 @@
 package com.example.collegeblows;
 
-public class character {
+import java.io.Serializable;
+
+public class character implements Serializable {
     int charis, intel, dex, stren, consti;
     public character(){
         this.charis = 0;

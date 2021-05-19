@@ -2,16 +2,21 @@ package com.example.collegeblows;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Level1 extends AppCompatActivity {
+import java.io.Serializable;
 
-    Button b_option1, b_option2;
+public class Level1 extends AppCompatActivity implements Serializable {
+
+    Button b_option1, b_option2, menu;
     TextView text, hp;
     int step, health;
+    character character;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("OnCreate");
@@ -19,12 +24,19 @@ public class Level1 extends AppCompatActivity {
         setContentView(R.layout.first_level);
         b_option1 = findViewById(R.id.button_option1);
         b_option2 = findViewById(R.id.button_option2);
+        menu = findViewById(R.id.returnMenu);
         text = findViewById(R.id.text_view);
         hp = findViewById(R.id.hp);
+        Bundle bundle = getIntent().getExtras();
+        character = (com.example.collegeblows.character) bundle.getSerializable("Character");
         step = 0;
         health = 10;
     }
 
+    public void returnMenu(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
     public void updateHealth(int x) {
         health += x;
         hp.setText("" + health);
@@ -59,17 +71,15 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==3) {
-            if(charisma_check==true) {
+            if(character.statCheck("char", 5) == true) {
                 text.setText("Your roommate happily says he'll do them, time to go to class");
-                b_option1.setText("Walk there");
-                b_option2.setText("Take the bus");
             }
             else {
                 updateHealth(-1);
                 text.setText("Your roommate slaps you and walks away, time to go to class");
-                b_option1.setText("Walk there");
-                b_option2.setText("Take the bus");
             }
+            b_option1.setText("Walk there");
+            b_option2.setText("Take the bus");
             step++;
         }
         else if(step==4) {
@@ -79,17 +89,16 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==5) {
-            if(int_check==true) {
+            if(character.statCheck("int", 7)==true) {
                 text.setText("The test was easy for you so you leave");
                 b_option1.setText("Walk away happy");
-                b_option2.setText("Walk away unbothered");
             }
             else {
                 updateHealth(-5);
                 text.setText("That test whooped your ass and you leave");
                 b_option1.setText("Walk away sad");
-                b_option2.setText("Walk away unbothered");
             }
+            b_option2.setText("Walk away unbothered");
             step++;
         }
         else if(step==6) {
@@ -117,17 +126,15 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==10) {
-            if(const_check==true) {
+            if(character.statCheck("const", 5)==true) {
                 text.setText("You quickly dodge the chair and its time to strike back");
-                b_option1.setText("Throw your own chair");
-                b_option2.setText("Throw a punch at him");
             }
             else {
                 updateHealth(-4);
                 text.setText("The chair smacks into your head, but its time to strike back");
-                b_option1.setText("Throw your own chair");
-                b_option2.setText("Throw a punch at him");
             }
+            b_option1.setText("Throw your own chair");
+            b_option2.setText("Throw a punch at him");
             step++;
         }
         else if(step==11) {
@@ -178,17 +185,15 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==3) {
-            if(strength_check==true) {
+            if(character.statCheck("str", 6)==true) {
                 text.setText("Your roommate shivering, says he'll do them, time to go to class");
-                b_option1.setText("Walk there");
-                b_option2.setText("Take the bus");
             }
             else {
                 updateHealth(-1);
                 text.setText("Your roommate slaps you and walks away, time to go to class");
-                b_option1.setText("Walk there");
-                b_option2.setText("Take the bus");
             }
+            b_option1.setText("Walk there");
+            b_option2.setText("Take the bus");
             step++;
         }
         else if(step==4) {
@@ -198,17 +203,16 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==5) {
-            if(dex_check==true) {
+            if(character.statCheck("dex", 6)==true) {
                 text.setText("The kid next to you left his paper wide open and the test was easy");
                 b_option1.setText("Walk away happy");
-                b_option2.setText("Walk away unbothered");
             }
             else {
                 updateHealth(-10);
                 text.setText("The teacher caught you and kicked you out");
                 b_option1.setText("Walk away sad");
-                b_option2.setText("Walk away unbothered");
             }
+            b_option2.setText("Walk away unbothered");
             step++;
         }
         else if(step==6) {
@@ -236,17 +240,15 @@ public class Level1 extends AppCompatActivity {
             step++;
         }
         else if(step==10) {
-            if(const_check==true) {
+            if(character.statCheck("const", 8)==true) {
                 text.setText("The chair shatters on your arms and its time to strike back");
-                b_option1.setText("Throw your own chair");
-                b_option2.setText("Throw a punch at him");
             }
             else {
                 updateHealth(-4);
                 text.setText("The chair smacks into your head, but its time to strike back");
-                b_option1.setText("Throw your own chair");
-                b_option2.setText("Throw a punch at him");
             }
+            b_option1.setText("Throw your own chair");
+            b_option2.setText("Throw a punch at him");
             step++;
         }
         else if(step==11) {
@@ -273,6 +275,7 @@ public class Level1 extends AppCompatActivity {
             text.setText("Congrats you win");
             b_option1.setText("good job!");
             b_option2.setText("you did well");
+            menu.setVisibility(View.VISIBLE);
             step++;
         }
 
