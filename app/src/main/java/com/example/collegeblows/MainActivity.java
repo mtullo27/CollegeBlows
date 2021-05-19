@@ -16,15 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        b_play = findViewById(R.id.button_play);
+
         b_instructions = findViewById(R.id.button_instructions);
     }
 
-    public void playClick(View view) {
-        Intent intent =  new Intent(this, Level1.class);
-        startActivity(intent);
 
-    }
     public void instructionClick(View view) {
         Intent intent =  new Intent(this, Instruction2.class);
         startActivity(intent);
